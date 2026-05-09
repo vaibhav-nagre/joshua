@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/dialog";
 
 const itineraryData = {
-  "tripName": "Relaxed Joshua Tree Overnight – Indian Cove Base",
+  "tripName": "Joshua Tree",
   "dates": { "start": "2026-05-09", "end": "2026-05-10" },
   "days": [
     {
