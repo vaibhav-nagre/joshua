@@ -132,6 +132,9 @@ const safetyTips = [
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [parallaxY, setParallaxY] = useState(0);
+  const [tripTitle, tripSubtitle = ""] = itineraryData.tripName
+    .split("–")
+    .map((part) => part.trim());
 
   useEffect(() => {
     // Force dark mode for this page specifically to ensure our theme works
@@ -215,10 +218,12 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1]">
-            {itineraryData.tripName.split('–')[0].trim()}
-            <span className="block text-3xl md:text-4xl lg:text-5xl mt-4 text-primary font-normal italic">
-              – {itineraryData.tripName.split('–')[1].trim()}
-            </span>
+            {tripTitle}
+            {tripSubtitle && (
+              <span className="block text-3xl md:text-4xl lg:text-5xl mt-4 text-primary font-normal italic">
+                – {tripSubtitle}
+              </span>
+            )}
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto font-light leading-relaxed">
